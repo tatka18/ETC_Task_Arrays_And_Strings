@@ -1,6 +1,21 @@
 package by.epamtc.task01.service;
 
 public class IntegerArrayService {
+    public static int[] minMaxElementOfArray(int []arr){
+        int max = arr[0];
+        int min = arr[0];
+
+        for (int element : arr) {
+            if (element > max) {
+                max = element;
+            }
+            if (element <= min) {
+                min = element;
+            }
+        }
+        return new int[]{min, max};
+    }
+
     public static boolean binarySearch(int[] array, int element){
         int[] sortedArray = SortingService.bubbleSort(array);
         return isContainElement(sortedArray, element);
