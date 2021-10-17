@@ -1,5 +1,8 @@
 package by.epamtc.task01.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class IntegerArrayService {
     public static int[] minMaxElementOfArray(int []arr){
         int max = arr[0];
@@ -36,5 +39,21 @@ public class IntegerArrayService {
             position = (first + last) / 2;
         }
         return first <= last;
+    }
+
+    public static List<Integer> primeNumbersOfArray(int[] arr){
+        List<Integer> primeList = new ArrayList<>();
+        for (int element: arr){
+            if(element == 2){
+                primeList.add(element);
+                continue;
+            }
+            for (int i = (element - 1); i > 1; i--){
+                if((element % i) == 0) break;
+                if(i == 2){
+                    primeList.add(element);
+                }
+            }
+        }return primeList;
     }
 }
