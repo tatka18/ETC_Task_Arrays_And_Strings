@@ -27,4 +27,21 @@ public class SortingService {
         return array;
     }
 
+    public static int[] selectionSort(int[] array) {
+        int temp;
+        for (int i = 0; i < array.length; i++) {
+            int minElement = array[i];
+            int minIndexRight = i;
+            for (int j = i + 1; j < array.length - 1; j++) {
+                if (array[j] < minElement) {
+                    minElement = array[j];
+                    minIndexRight = j;
+                }
+            }
+            temp = array[i];
+            array[i] = minElement;
+            array[minIndexRight] = temp;
+        }
+        return array;
+    }
 }
